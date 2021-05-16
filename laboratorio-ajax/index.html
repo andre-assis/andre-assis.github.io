@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Cadastro de livros</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+	<fieldset>
+		
+		<legend>Cadastro de livros</legend>
+		
+		<input type="text" id="titulo" placeholder="Titulo"><br><br>
+		
+		<textarea id="descricao" placeholder="Descrição"></textarea><br><br>
+		
+		<select id="genero">
+			<option value="Romance">Romance</option>
+			<option value="Drama">Drama</option>
+			<option value="Terror">Terror</option>
+			<option value="Ficção">Ficção</option>
+			<option value="Técnico">Técnico</option>
+		</select><br><br>
+		
+		<input type="text" id="autor" placeholder="Autor">
+		
+		
+		<button id="botao">Cadastrar</button>
+	
+	</fieldset>
+
+	<section>
+		
+		<h2>Catálogo
+	
+	</section>
+  
+	<table id="acervo">
+		<tr>
+			<th class="teste">Título</th><br>
+			<th class="teste">Descrição</th>
+			<th class="teste">Gênero</th>
+			<th class="teste">Autor</th>
+			<th></th>
+		</tr>
+	</table><br>
+	
+	<button id="botao_apagar">Apagar Lista</button><br><br>
+
+	<form action="https://rafaelescalfoni.net/web/livros.php" method="post">
+		<input type="hidden" name="acervo_post">
+		<input type="submit" value="Salvar no BD" name="salvar_bd">
+	</form>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	
+</body>
+</html>
