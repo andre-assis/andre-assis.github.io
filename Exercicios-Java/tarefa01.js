@@ -12,7 +12,7 @@
         }
 
         doc.querySelector('.result').classList.remove('d-none');
-        doc.querySelector('.sum').innerHTML= `Soma : ${sum}`;
+        doc.querySelector('.sum').innerHTML=`Soma: ${sum}`;
 
 }, false);
 
