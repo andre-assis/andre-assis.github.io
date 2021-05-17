@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=200px, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salário final</title>
+</head>
+
+<body>
+    <h1>Salário final</h1>
+    <input type="number" id="n1" placeholder="Carros vendidos" /><br>
+    <input type="number" id="n2" placeholder="Valor das Vendas" /><br>
+    <input type="number" id="n3" placeholder="Salário fixo" /><br>
+    <input type="number" id="n4" placeholder="Comissão" /><br>
+    <button>Calcular</button>
+
+    <script>
+        function mostrarSoma() {
+            var input = document.querySelector("input");
+            var n1 = parseInt(document.getElementById('n1').value, 10);
+            var n2 = parseInt(document.getElementById('n2').value, 10);
+            var n3 = parseInt(document.getElementById('n3').value, 10);
+            var n4 = parseInt(document.getElementById('n4').value, 10);
+            var resultado = n3 + (n4*n1) + (n2*0.05);
+
+            alert("O salário total é " + resultado);
+        }
+
+        var botao = document.querySelector("button");
+        botao.onclick = mostrarSoma;
+    </script>
+</body>
+
+</html>

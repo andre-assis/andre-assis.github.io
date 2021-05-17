@@ -5,28 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=200px, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Somar</title>
+    <title>Maior número</title>
 </head>
 
 <body>
-    <h1>Somar dois números</h1>
+    <h1>Maior número</h1>
     <input type="number" id="n1" placeholder="Numero 1" />
     <input type="number" id="n2" placeholder="Numero 2" />
-    <button>Somar</button>
+    <button>Verificar</button>
 
     <script>
-        function mostrarSoma() {
+        function mostrarResultado() {
             var input = document.querySelector("input");
             var n1 = parseInt(document.getElementById('n1').value, 10);
             var n2 = parseInt(document.getElementById('n2').value, 10);
+            var resultado = 0
 
-            var resultado = n1 + n2;
+            if (n1 > n2) {
+                resultado = n1;
+            } else {
+                resultado = n2;
+            }
 
-            alert("A soma dos numeros é " + resultado);
+            alert("O maior numero é " + resultado);
         }
 
         var botao = document.querySelector("button");
-        botao.onclick = mostrarSoma;
+        botao.onclick = mostrarResultado;
     </script>
 </body>
 

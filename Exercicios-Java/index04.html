@@ -5,28 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=200px, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Somar</title>
+    <title>Calcula Hipotenusa</title>
 </head>
 
 <body>
-    <h1>Somar dois números</h1>
-    <input type="number" id="n1" placeholder="Numero 1" />
-    <input type="number" id="n2" placeholder="Numero 2" />
-    <button>Somar</button>
+    <h1>Calcula Hipotenusa</h1>
+    <input type="number" id="n1" placeholder="Cateto 1" />
+    <input type="number" id="n2" placeholder="Cateto 2" />
+    <button>Calcular</button>
 
     <script>
-        function mostrarSoma() {
+        function mostrarHipotenusa() {
             var input = document.querySelector("input");
             var n1 = parseInt(document.getElementById('n1').value, 10);
             var n2 = parseInt(document.getElementById('n2').value, 10);
 
-            var resultado = n1 + n2;
+            var resultado = Math.sqrt(Math.pow(n1, 2) + Math.pow(n2, 2));;
 
-            alert("A soma dos numeros é " + resultado);
+            alert("O valor da hipotenusa é " + resultado);
         }
 
         var botao = document.querySelector("button");
-        botao.onclick = mostrarSoma;
+        botao.onclick = mostrarHipotenusa;
     </script>
 </body>
 

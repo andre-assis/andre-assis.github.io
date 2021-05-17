@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=200px, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calcula Media</title>
+</head>
+
+<body>
+    <h1>Calcular Media</h1>
+    <input type="number" id="n1" placeholder="Nota P1" /><br>
+    <input type="number" id="n2" placeholder="Nota P2" /><br>
+    <input type="number" id="n3" placeholder="Nota P3" /><br>
+    <button>Calcular</button>
+
+    <script>
+        function mostrarMedia() {
+            var input = document.querySelector("input");
+            var n1 = parseFloat(document.getElementById('n1').value, 10);
+            var n2 = parseFloat(document.getElementById('n2').value, 10);
+            var n3 = parseFloat(document.getElementById('n3').value, 10);
+
+            var resultado = (n1*2 + n2*3 + n3*5)/10;
+
+            alert("A media das notas é " + resultado + "reais");
+        }
+
+        var botao = document.querySelector("button");
+        botao.onclick = mostrarMedia;
+    </script>
+</body>
+
+</html>
