@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Laboratório de jQuery 2</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            $("#botao").click(function () {
+                let frase = $("#entrada1").val();
+                let procurar = $("#entrada2").val();
+                let substituir = $("#entrada3").val();
+                const regex = /[0-9]/;
+                if (regex.test(frase) || regex.test(procurar) || regex.test(substituir) || frase == '') {
+                    alert("Digite um valor válido.");
+                }
+                else {
+                    frase = frase.toLocaleLowerCase();
+                    procurar = procurar.toLocaleLowerCase();
+                    substituir = substituir.toLocaleLowerCase();
+                    let atexto = frase.split(' ');
+                    for (i = 0; i < atexto.length; i++) {
+                        if (atexto[i] == procurar) {
+                            atexto[i] = substituir;
+                        }
+                    }
+                    let frase_novo = atexto.join(' ');
+                    $("#resultado").text(frase_novo);
+                }
+            })
+
+            $("#limpar").click(function () {
+                $("#entrada1").val("");
+                $("#entrada2").val("");
+                $("#entrada3").val("");
+                $("#resultado").text("");
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <section>
+
+        <div>
+
+            <h2>Escolha as palavras numa frase para fazer a troca: </h2><br>
+
+            <input type="text" id="entrada1" placeholder="Frase: "><br><br>
+
+            <input type="text" id="entrada2" placeholder="Palavra escolhida: "><br><br>
+
+            <input type="text" id="entrada3" placeholder="Substituta: "><br><br>
+
+            <button id="botao" class="btn">Trocar</button>
+
+            <p id="resultado"></p><br>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

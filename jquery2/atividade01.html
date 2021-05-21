@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=200px, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laboratório jQuery2</title>
+</head>
+
+<body>
+    <h1>Inverte texto</h1>
+    <input type="text" id="frase" placeholder="Frase" />
+    <button>Inverter</button>
+
+    <script>
+        function inverter() {
+            var input = document.querySelector("#frase");
+            var texto = input.value;
+            var tamanho = texto.length;
+            var inverso = "";
+
+            alert(texto.split('').reverse().join(''));
+        }
+
+        var botao = document.querySelector("button");
+        botao.onclick = inverter;
+    </script>
+</body>
+
+</html>

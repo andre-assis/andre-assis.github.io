@@ -1,0 +1,17 @@
+li{
+    cursor: pointer;
+}
+.linha{
+    padding-right: 3px;
+    border-right: 1px solid black;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+section, .linha{
+    display: inline-block;
+}
+div{
+    border-bottom: 1px solid black;
+    padding-bottom: 4px;
+    margin-right: 300px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Laboratório jQuery2</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            $("#botao").click(function () {
+                let data = $("#entrada").val();
+                if (data == '') {
+                    alert("Digite uma data válida.");
+                }
+                else {
+                    let ano = data.substr(0, 4);
+                    let mes = data.substr(5, 2);
+                    let dia = data.substr(8, 2);
+                    let hoje = new Date;
+                    let data1 = new Date(ano, mes - 1, dia);
+                    const diff = Math.abs(data1.getTime() - hoje.getTime());
+                    const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+                    $("#resultado").text("Você já viveu " + days + " dias!");
+                }
+            })
+
+            $("#limpar").click(function () {
+                $("#entrada").val("");
+                $("#resultado").text("");
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <section>
+
+        <h1>Sua Idade: </h1>
+
+        <div>
+
+            <h2>Dias vividos:</h2><br>
+
+            <input type="date" id="entrada" placeholder="Digite uma data:"><br><br>
+
+            <button id="botao" class="btn">Calcular</button>
+
+            <p id="resultado"></p><br>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

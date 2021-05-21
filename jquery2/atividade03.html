@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Laboratório jQuery2</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        function conta(y, palavra) {
+            return y.filter((v) => (v === palavra)).length;
+        }
+
+        $(function () {
+
+            $("#botao").click(function () {
+                let frase = $("#entrada").val();
+                const r = /[0-9]/;
+                if (r.test(frase) || frase == '') {
+                    alert("Digite um valor válido.");
+                }
+                else {
+                    let array_frase = frase.split(" ").map(function (palavra) {
+                        return palavra.toLocaleLowerCase().replace(/[.,]/g, '');
+                    });
+                    let arrayas = new Array;
+                    let pu = new Array;
+                    let i = 0;
+                    let x = 0;
+                    let oco;
+                    for (palavra of array_frase) {
+                        if (pu.indexOf(palavra) == -1) {
+                            oco = (conta(array_frase, palavra));
+                            pu.push(palavra);
+                            arrayas[x] = oco;
+                        }
+                        else {
+                            x--;
+                        }
+                        i++;
+                        x++;
+                    }
+
+                    for (i = 0; i < pu.length; i++) {
+                        let obj_tr = $("<tr>");
+                        $("#acervo").append(obj_tr);
+                        let obj_td = $("<td>");
+                        let obj_td2 = $("<td>");
+                        obj_td.text(pu[i]);
+                        obj_td2.text(arrayas[i]);
+                        obj_tr.append(obj_td);
+                        obj_tr.append(obj_td2);
+                    }
+                }
+            })
+
+            $("#limpar").click(function () {
+                $("#entrada").val("");
+                $("#resultado").text("");
+                $("#acervo td").remove();
+            })
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <section>
+
+        <div><br>
+
+            <h2>Contador de Palavras</h2><br>
+
+            <input type="text" id="entrada" placeholder="Digite uma frase:"><br><br>
+
+            <button id="botao">Verificar</button>
+
+
+            <p id="resultado"></p><br>
+
+        </div>
+
+        </div><br>
+
+        <div class="col-md-6 col-sm-6" style="padding: 1% 0 0 10%;" align="center">
+
+            <table width="60%" border="1" id="acervo">
+
+                <tr>
+
+                    <th>Palavra</th>
+                    <th>Vezes</th=>
+                </tr>
+
+            </table><br>
+
+        </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
